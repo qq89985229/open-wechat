@@ -20,7 +20,7 @@ public class AuthorizerRoute extends RouteBuilder {
     AuthorizerService authorizerService;
     @Override
     public void configure() throws Exception {
-/*        from("timer:initial//start?period=" + 1000L * 60L * 60L)
+        from("timer:initial//start?period=" + 1000L * 60L * 60L)
                 .bean(wxOpenService.getWxOpenComponentService(), "getAuthorizerList(0, 500)")
                 .process(exchange -> {
                     var wxOpenAuthorizerListResult = exchange.getIn().getBody(WxOpenAuthorizerListResult.class);
@@ -52,6 +52,6 @@ public class AuthorizerRoute extends RouteBuilder {
                         }))
                         .onErrorResume(WxErrorException.class, Mono::error)
                         .flatMap(authorizerService::save)
-                        .subscribe());*/
+                        .subscribe());
     }
 }
