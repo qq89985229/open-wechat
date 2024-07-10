@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: debug
+        data:
+          mongodb:
+            core: debug
+      thymeleaf: debug

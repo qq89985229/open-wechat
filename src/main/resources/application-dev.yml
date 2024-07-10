@@ -1,0 +1,33 @@
+spring:
+  data:
+    mongodb:
+      host: 192.168.1.166
+      port: 27017
+      username: open_weixin
+      password: "123456"
+      database: open_weixin
+      authentication-database: open_weixin
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 1
+      timeout: 60000
+      jedis:
+        pool:
+          max-active: 300
+          max-idle: 8
+          min-idle: 0
+          max-wait: 1000
+      repositories:
+        enabled: false
+admin:
+  username: admin
+  password: 123456
+wx:
+  open-wechat:
+    mobile: ${WX_MOBILE}
+    preAuthUrl: ${WX_PRE_AUTH_URL}
+    componentAppId: ${WX_COMPONENT_APPID}
+    componentSecret: ${WX_COMPONENT_SECRET}
+    componentToken: ${WX_COMPONENT_TOKEN}
+    componentAesKey: ${WX_COMPONENT_AES_KEY}
