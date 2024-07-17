@@ -80,8 +80,8 @@ public class WxOpenMaBasicController extends BaseController{
      *获取类目
      */
     @GetMapping(value = "get-category")
-    public Mono<WxFastMaBeenSetCategoryResult> getCategory(@RequestParam(value = "appId") String appId){
-        return Mono.fromCallable(() -> getWxOpenMaBasicService(appId).getCategory())
+    public Mono<WxFastMaBeenSetCategoryResult> getCategory(WechatOpenDto.AppId appId){
+        return Mono.fromCallable(() -> getWxOpenMaBasicService(appId.getAppId()).getCategory())
                 .onErrorResume(WxErrorException.class, Mono::error);
     }
 
